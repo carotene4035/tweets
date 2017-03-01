@@ -1,0 +1,11 @@
+<div class="col-md-10 col-sm-10 col-sm-offset-1">
+<h1>私のタイムライン</h1>
+<% @tweets.each do |tweet| %>
+    <div class='tweet'>
+    <p><%= tweet.content %></p>
+    <%= link_to '', edit_tweet_path(tweet.id), class: 'fa fa-edit fa-fw' %>
+    <%= link_to '', tweet_path(tweet.id), method: :delete, class: 'fa fa-trash fa-fw' %>
+    </div>
+<% end %>
+<%= link_to 'ツイートする', new_tweet_path, class: 'btn btn-primary btn-block' %>
+</div>
